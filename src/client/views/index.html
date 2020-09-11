@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Travel App</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <!-- fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Kalam&family=Lobster&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Oswald:400,600,700|Ranga:400,700&display=swap"
+            rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Fondamento&display=swap" rel="stylesheet">
+
+        <!-- Font Awesome - icons -->
+        <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+        <!-- bootstrap -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+            integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+            integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+            crossorigin="anonymous"></script>
+
+
+    </head>
+    <body>
+        <header>
+            <nav class="nav navbar navbar-expand-lg navbar-dark ">
+                <p id="title" class="navbar-brand">Traveli</p>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+                    aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-end" id="navbarTogglerDemo02">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active_nav"><a class="nav-link" href="#home">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#my_trips">Trips</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <section id="home">
+            <div id="reserve_div">
+                
+                <form class="trip_form">
+                    <h3>Schedule your trips</h3>
+                    <label>Destination</label>
+                    <input id="trip_place" type="search" placeholder="To where..." required>
+
+                    <label>Departure</label>
+                    <input id="trip_date" type="date" name="trip-start" min="2015-01-01" max="2025-12-31">
+
+                    <input id="search_btn" type="submit" value="Search">
+                </form>
+            </div>
+
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+
+                <div class="modal_content">
+                    <span id="modal_close">&times;</span>
+
+                    <div id="modal_card">
+                        <img id="modal_img" src="//placehold.it/100?text=Agni.jpg" alt="Card image cap" />
+                        <div id="modal_text">
+                            <h3 id="modal_title"> Agni</h3>
+                            <hr>
+                        </div>
+                        <button id="save_trip_btn"> Save Trip</button>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section id="my_trips">
+            <h1 id="my_trips_title">My trips</h1>
+            <div id="all_trip_cards" class="container">
+                <div class="row">
+
+                    </div>
+                </div>
+            </div>
+
+
+        </section>
+
+        <footer id="footer">
+            <div class="social-media-links">
+                <a href="https://twitter.com/dev__girl"><img src="https://res.cloudinary.com/anuoluwapo/image/upload/v1599824449/twitter.svg" alt="twitter's logo"></a>
+                <a href="https://linkedin.com/in/anuoluwapo-olurombi-633478173"><img src="https://res.cloudinary.com/anuoluwapo/image/upload/v1599824449/linkedin.svg" alt="linkedin's logo"></a>
+                <a href="https://instagram.com/your_fav_engr"><img src="https://res.cloudinary.com/anuoluwapo/image/upload/v1599824449/instagram.svg" alt="instagram's logo"></a>
+            </div>
+            <h4>This website is made with love</h4>
+            <h4>&copy; Anu 2020</h4>
+        </footer>
+
+        <script>
+            // Check that service workers are supported
+            if ('serviceWorker' in navigator) {
+            // Use the window load event to keep the page load performant
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js').then(registration =>{
+                    console.log('SW registered: ', registration);
+                });
+            });
+            }else{
+            console.log("Service Working not working");
+                }
+        </script>
+
+    </body>
+</html>
